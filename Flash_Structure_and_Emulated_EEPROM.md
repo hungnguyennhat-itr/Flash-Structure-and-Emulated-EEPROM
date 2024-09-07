@@ -3,7 +3,7 @@
 ## I. Flash Structure of PSOC 63 MCU
 
 ### Overview:
-- PSOC 63 MCU implement dual core architecture with both core have shared access to memory. The MCU will access to flash memory through the code region in the address map. The address range for code region is 0x0000 0000 - 0x1FFF FFFF.
+- PSOC 63 MCU implement dual core architecture with both core have shared access to memory. The MCU will access to flash memory through the code region in the address map.
 - Flash memory is divided into 3 main regions which include Supervisory Flash (SFlash), Auxiliary Flash (AUXFlash), Application Flash. Each region is used for specific purpose:
     + Application Flash stores code images and constant data. Therefore, this region have the largest space compare to the rest . User have read and program/erase access to this region but due to Erase Disturb mechanism, it is recommended to store frequently-updated data on another region.
     + Auxiliary Flash provides more storing space when Application Flash's space is not enough. This region is typically used for EEPROM emulation which is benefit for storing log data updated on daily basis.
@@ -14,10 +14,14 @@
 
 ![ Flash's Internal Organization.](/Flash_Structure.png)
 
-### Application Flash and API for accessing:
-
 ### Supervisory Flash and API for accessing:
+- The total space of SFLASH region is 64KB. However, only sector 0, which is 32KB memory space, is used by the CPUs and the other is left empty. The address range for this region in CPU's address map is 0x1600 0000 - 0x1600 7FFF.
 
 ### Auxiliary Flash and API for accessing:
+- The total space of AUXFlash region is 64KB. The CPUs only access sector 0 in this region in the address range 0x1400 0000 - 0x1400 7FFF.
+
+### Application Flash and API for accessing:
+- The total space of Application region is 1MB. This region is accessed by the CPUs in the address range 0x1000 0000 - 0x100F FFFF.
+
 
 ## II. Emulated EEPROM Example:
