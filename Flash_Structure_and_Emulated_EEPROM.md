@@ -44,3 +44,7 @@
 | cy_en_em_eeprom_status_t Cy_Em_EEPROM_Init(cy_stc_eeprom_config_t* config, cy_stc_eeprom_context_t * context) | This function will initialize EEPROM on flash memory base on config struct parameter. If user enable option Use Emulated EEPROM on the configuration box of EEPROM component, the config and context struct will be defined in Em_EEPROM.c file and used as global variable. User need to set userFlashStartAddr variable in config struct before passing this struct as argument to init function. The return value is the result of the operation being success or fail. |
 | cy_en_em_eeprom_status_t Cy_Em_EEPROM_Read(uint32_t addr, void * eepromData, uint32_t size, cy_stc_eeprom_context_t * context); | This function will read an array of data from EEPROM starting from the logical address in addr parameter with the array's size indicated by size parameter, then store this data to user array pointed to by eepromData parameter. The return value is the result of the operation being success or fail. |
 | cy_en_em_eeprom_status_t Cy_Em_EEPROM_Write(uint32_t addr, void * eepromData, uint32_t size, cy_stc_eeprom_context_t * context); | This function will write a user data pointed to by eepromData parameter to EEPROM starting from the logical address in addr parameter and the data's size is indicated by size parameter. The return value is the result of the operation being success or fail. | 
+
+- Example code execute mainly on Cortex M4 core follow the below flow chart:
+
+![Flow_Chart](./Flowchart_Example.png)
