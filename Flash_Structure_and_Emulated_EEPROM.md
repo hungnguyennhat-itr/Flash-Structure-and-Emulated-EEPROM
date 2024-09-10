@@ -48,3 +48,9 @@
 - Example code execute mainly on Cortex M4 core follow the below flow chart:
 
 ![Flow_Chart](./Flowchart_Example.png)
+
+- The data format stored in EEPROM:
+
+| Type of data in a row of EEPROM | Historic data | CRC | Recent data | Size of recent data | Logical address at the start of recent data | sequence number |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| **Length of data field** | 256 high bytes | 4 bytes | 240 bytes | 4 bytes | 4 bytes | 4 bytes |
