@@ -54,3 +54,11 @@
 | Type of data in a row of EEPROM | Historic data | CRC | Recent data | Size of recent data | Logical address at the start of recent data | sequence number |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **Length of data field** | 256 high bytes | 4 bytes | 240 bytes | 4 bytes | 4 bytes | 4 bytes |
+
+- Flow chart for Cy_Em_EEPROM_Read:
+
+![flowchart_read_api](./eeprom_read_api.drawio.png)
+
+- Flow chart for Cy_Em_EEPROM_Write:
+
+![flowchart_write_api](./eeprom_write_api.drawio.png)
