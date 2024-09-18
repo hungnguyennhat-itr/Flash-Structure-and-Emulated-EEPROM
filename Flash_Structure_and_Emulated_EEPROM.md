@@ -51,7 +51,10 @@
 
 - The data format stored in EEPROM:
 
-| Type of data in a row of EEPROM | Historic data | CRC | Recent data | Size of recent data | Logical address at the start of recent data | sequence number |
+    + User’s data stored in EEPROM is divided into blocks, each of which is equal to the configured size of the EEPROM component in the schematic design. The number of used blocks is equal to user's desired EEPROM size multiplied by wear-leveling factor.
+    + A block consists of rows, each with 512 bytes in size. In a row, the most significant 256 bytes serve as the main storage, while the remaining bytes are used as EEPROM header data, functioning as a buffer.
+
+|  Data fields | Storage Data | CRC | Buffer Data | Size of buffer data | Starting Logical address | Sequence Number |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **Length of data field** | 256 high bytes | 4 bytes | 240 bytes | 4 bytes | 4 bytes | 4 bytes |
 
