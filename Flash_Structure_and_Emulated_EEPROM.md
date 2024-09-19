@@ -60,7 +60,7 @@
 
 - Flow chart for Cy_Em_EEPROM_Read:
 
-![flowchart_read_api](./eeprom_read_api.drawio.png)
+![flowchart_read_api](./eeprom_read_api.png)
 
 - Flow chart for Cy_Em_EEPROM_Write:
 
